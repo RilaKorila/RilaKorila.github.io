@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>js_contents</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="scroll.css" /> -->
+    </head>
+
+    <body>
+        <nav
+            class="
+                navbar
+                sticky-top
+                navbar-expand-lg navbar-dark
+                bg-success
+                text-white
+            "
+        >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Waffle Camp</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="boot_index.html"
+                                >ホーム</a
+                            >
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                追加コンテンツ
+                            </a>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./pages/uranai.html"
+                                        >占い</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./pages/calendar.html"
+                                        >カレンダー</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./pages/weather.html"
+                                        >お天気</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./pages/noticeTime.html"
+                                        >とけい</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./pages/utils.html"
+                                        >電卓</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="show-time">
+                        <p>ただいまの時刻：<span id="clock"></span></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-container">
+            <div class="url-box">
+                <p><a href="./sample_before.html">スタート地点</a></p>
+                <p>
+                    <a href="./sample_step2.html"
+                        >Step2: スライドショーの追加</a
+                    >
+                </p>
+                <p>
+                    <a href="./sample_step3.html"
+                        >Step3: Start/Stopボタンを2つ追加</a
+                    >
+                </p>
+                <p>
+                    <a href="./sample_after.html"
+                        >Step4: Start/Stopボタンを改善</a
+                    >
+                </p>
+            </div>
+
+            <!-- <div class="scrolldown4"><span>Scroll</span></div> -->
+
+            <div class="slide-show">
+                <h2>スライドショー</h2>
+                <img src="imgs/fruits.png" id="slide_img" />
+                <a class="btn" id="slide-btn" onclick="startStop()">start</a>
+            </div>
+
+            <div class="cards">
+                <h2>オプション項目</h2>
+
+                <div class="card">
+                    <h2>占い</h2>
+                    <p>乱数, 分岐, 配列のindexを使う。</p>
+                    <p><a href="./pages/uranai.html"> こちら</a></p>
+                </div>
+
+                <div class="card">
+                    <h2>カレンダー</h2>
+                    <p>Dateメソッド, 反復, 分岐を使う</p>
+                    <p>
+                        todayをハイライトする仕様であれば、id,
+                        classの使い分けが勉強になる
+                    </p>
+                    <p><a href="./pages/calendar.html"> こちら</a></p>
+                </div>
+
+                <div class="card">
+                    <h2>お天気</h2>
+                    <p>
+                        APIを使ってみる。今回は、気象庁がJSON形式で公表するデータを使用
+                    </p>
+                    <p><a href="./pages/weather.html">こちら</a></p>
+                </div>
+
+                <div class="card">
+                    <h2>とけい</h2>
+                    <p>Dateメソッドをさらに応用。</p>
+                    <p>
+                        アナログ時計に関しては、ほぼCSS頼りなので穴埋め箇所も少ないかも
+                    </p>
+                    <p><a href="./pages/noticeTime.html">こちら</a></p>
+                </div>
+
+                <div class="card">
+                    <h2>電卓</h2>
+                    <p>ボタンを配列で管理</p>
+                    <p><a href="./pages/utils.html">こちら</a></p>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/slideShow.js"></script>
+        <script src="js/showDataTime.js"></script>
+        <script src="js/weather.js"></script>
+    </body>
+</html>
